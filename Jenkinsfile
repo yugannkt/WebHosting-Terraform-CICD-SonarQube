@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Quality Gate') {
             steps {
-                waitForQualityGate abortPipeline: false, credentialsId: 'squ_87ddb35800d29c4956a3cd0c2d6dc798101337d9'
+                waitForQualityGate abortPipeline: false
             }
         }
         stage('Deploy to Apache') {

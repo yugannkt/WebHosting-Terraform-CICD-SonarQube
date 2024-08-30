@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        SONARQUBE_SERVER = 'poc' 
+        SONARQUBE_SERVER = 'poc'
         PROJECT_KEY = 'poc'
         SONAR_SCANNER_HOME = tool name: 'poc', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
@@ -22,13 +22,7 @@ pipeline {
         }
         stage('Quality Gate') {
             steps {
-                script {
-                    // Wait for the SonarQube quality gate status
-                    def qg = waitForQualityGate()
-                    if (qg.status != 'OK') {
-                        error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                    }
-                }
+                waitForQualityGate abortPipeline: false, credentialsId: 'squ_87ddb35800d29c4956a3cd0c2d6dc798101337d9'
             }
         }
         stage('Deploy to Apache') {

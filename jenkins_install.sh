@@ -58,5 +58,3 @@ sudo docker run -d --name sonarqube \
   -e SONAR_JDBC_USERNAME=sonar \
   -e SONAR_JDBC_PASSWORD=sonar \
   sonarqube 
-
-

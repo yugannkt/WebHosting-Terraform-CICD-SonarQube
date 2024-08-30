@@ -22,7 +22,15 @@ pipeline {
         }
         stage('Quality Gate') {
             steps {
-                waitForQualityGate abortPipeline: false
+                script {
+                    def qg = waitForQualityGate()
+                    if (qg.status == 'ERROR') {
+                        currentBuild.result = 'FAILURE'
+                        error "Quality Gate failed. Build aborted."
+                    } else {
+                        currentBuild.result = 'SUCCESS'  
+                    }
+                }
             }
         }
         stage('Deploy to Apache') {

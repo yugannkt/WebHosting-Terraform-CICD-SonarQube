@@ -11,7 +11,7 @@ module "instance_sonar" {
   instance_type      = var.instance_type_sonar
   key_name           = var.key_name
   security_group_ids = [module.security_group.id]
-  user_data_file     = "./sonar_install.sh"
+  user_data_file     = "./scripts/sonar_install.sh"
   user_data_vars     = {}
   name               = var.name_sonar
   root_volume_size   = var.root_volume_size_sonar
@@ -23,7 +23,7 @@ module "instance_jenkins" {
   instance_type      = var.instance_type_jenkins
   key_name           = var.key_name
   security_group_ids = [module.security_group.id]
-  user_data_file     = "./jenkins_install.sh"
+  user_data_file     = "./scripts/jenkins_install.sh"
   user_data_vars     = {}
   name               = var.name_jenkins
   root_volume_size   = var.root_volume_size_jenkins

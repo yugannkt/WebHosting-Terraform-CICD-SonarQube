@@ -5,22 +5,22 @@ variable "ami" {
 
 variable "instance_type" {
   type        = string
-  description = "instance type."
+  description = "Instance type."
 }
 
 variable "key_name" {
   type        = string
-  description = "key"
+  description = "Key pair name."
 }
 
 variable "security_group_ids" {
   type        = list(string)
-  description = "security group"
+  description = "Security group IDs."
 }
 
 variable "user_data_file" {
   type        = string
-  description = "Script file."
+  description = "Script file for user data."
 }
 
 variable "user_data_vars" {
@@ -30,10 +30,10 @@ variable "user_data_vars" {
 
 variable "name" {
   type        = string
-  description = "name "
+  description = "Name of the instance."
 }
 
 variable "root_volume_size" {
   type        = number
-  description = "Volume."
+  description = "Size of the root volume."
 }

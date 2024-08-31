@@ -10,5 +10,5 @@ variable "description" {
 
 variable "ingress_ports" {
   type        = list(number)
-  description = "The list of ports to allow inbound traffic."
+  description = "List of ports to allow inbound traffic."
 }

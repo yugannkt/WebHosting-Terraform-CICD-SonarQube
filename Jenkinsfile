@@ -41,12 +41,8 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'sudo systemctl start apache2'
-                    sh 'sudo rm -rf /var/www/html/*'
-                    sh 'sudo cp -r * /var/www/html/'
-                    sh 'sudo chown -R www-data:www-data /var/www/html/*'
-                    sh 'sudo chmod -R 755 /var/www/html/*'
-                    sh 'sudo systemctl restart apache2'
+                    sh 'chmod +x deploy.sh'
+                    sh './deploy.sh'
                 }
             }
         }

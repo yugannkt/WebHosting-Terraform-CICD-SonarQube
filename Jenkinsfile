@@ -41,8 +41,8 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'chmod +x deploy.sh'
-                    sh './deploy.sh'
+                    sh 'chmod +x scripts/deploy.sh'
+                    sh './scripts/deploy.sh'
                 }
             }
         }

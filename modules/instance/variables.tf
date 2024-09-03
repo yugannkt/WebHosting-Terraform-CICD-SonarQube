@@ -1,3 +1,5 @@
+# modules/instance/variables.tf
+
 variable "ami" {
   type        = string
   description = "AMI ID for the instance."

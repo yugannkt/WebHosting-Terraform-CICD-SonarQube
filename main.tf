@@ -1,3 +1,5 @@
+# main.tf
+
 module "security_group" {
   source      = "./modules/security_group"
   name        = var.security_group_name

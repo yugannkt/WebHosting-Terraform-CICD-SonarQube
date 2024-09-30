@@ -1,1 +1,1 @@
-﻿# --------- WebHosting-Terraform-CICD-SonarQube
+﻿# ----- WebHosting-Terraform-CICD-SonarQube
